@@ -1,0 +1,75 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>eBRS Prototype</title>
+    <link href="../styles/styles.css" media="screen" rel="stylesheet">
+    <link href="../styles/pages.css" media="screen" rel="stylesheet">
+</head>
+<body onload="resize()" onresize="resize()">
+
+<div style="text-align: center; width: 80%; border: none; margin: auto;">
+    <table cellpadding="10" id="tbl" width="100%">
+        <tr>
+            <td align="right" style="width: 250px;">
+                Username
+            </td>
+            <td style="width: 20px;">
+                :
+            </td>
+            <td id="username">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Role(s)
+            </td>
+            <td>
+                :
+            </td>
+            <td id="role">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                <div id="dummy"
+                     style="width: 100%; background-color: rgba(83, 121, 232, 0.1); border: 1px solid #eee; border-radius: 5px;">
+                    &nbsp;</div>
+            </td>
+        </tr>
+    </table>
+</div>
+
+<script>
+
+    function __$(id) {
+        return document.getElementById(id);
+    }
+
+    function resize() {
+
+        if (__$("dummy")) {
+
+            __$("dummy").style.height = (window.innerHeight - 200) + "px";
+
+        }
+
+        if (__$("tbl")) {
+
+            // __$("tbl").style.width = (window.innerWidth - 350) + "px";
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>eBRS Prototype</title>
+    <link href="styles/styles.css" media="screen" rel="stylesheet">
+    <link href="styles/pages.css" media="screen" rel="stylesheet">
+</head>
+<body onload="resize()" onresize="resize()" style=" color: #000;">
+
+<div id="main" style="border: #3465a4 solid 1px; width: 100%; height: 100%; padding-top: 10px; overflow: auto;">
+    <table width="100%" cellpadding="10">
+        <tr>
+            <td colspan="3" align="center">
+                <img id="logo" src="images/coa.png" style="margin-bottom: 10px;"/>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center" style="font-size: 36px; color: #000;">
+                eBRS
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Username
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="username" name="username" value="" style="width: 60%;"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Password
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="password" class="input_cell" id="password" name="password" value="" style="width: 60%;"/>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Location
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select class="input_cell" id="location" name="location" style="width: 62% !important;" onchange="if(this.value.trim().length > 0) window.location = this.value;">
+                    <option></option>
+                    <option value="dc/dc.html">District Commissioner</option>
+                    <option value="hq/hq.html">NRB HQ</option>
+                    <option value="facility/index.html">Health Facility</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center">
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" align="center" style="font-size: 24px; color: #000;">
+                National Registration Bureau
+                <div style="font-size: 12px; color: #000;">
+                    Ministry of Home Affairs
+                </div>
+                <div style="font-size:  14px; color: #000; font-weight: bold;">
+                    Malawi Government
+                </div>
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+
+    function __$(id) {
+        return document.getElementById(id);
+    }
+
+    function resize() {
+        if (__$("main")) {
+            __$("main").style.height = (window.innerHeight - 60) + 'px';
+        }
+
+        if(__$("logo")){
+
+            __$("logo").setAttribute("height", (window.innerHeight - 60) * 0.25);
+
+        }
+    }
+
+</script>
+
+</body>
+</html>

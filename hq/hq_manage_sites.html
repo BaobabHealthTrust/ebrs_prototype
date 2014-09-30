@@ -1,0 +1,67 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>eBRS Prototype</title>
+    <link href="../styles/styles.css" media="screen" rel="stylesheet">
+    <link href="../styles/pages.css" media="screen" rel="stylesheet">
+</head>
+<body>
+
+<div id="main" style="width: 100%; height: 400px; text-align: center; vertical-align: top;">
+
+    <div class="button" onclick="window.parent.loadPage(parseInt(this.getAttribute('tag')))" tag=20>
+        <table style="text-align: left;">
+            <tr>
+                <td rowspan="2">
+                    <img src="../images/folder.png" height="60"/>
+                </td>
+                <td style="height: 30px;">
+                    Add Site
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 11px; font-style: italic;">
+                    Add new site.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="button" onclick="window.parent.loadPage(parseInt(this.getAttribute('tag')))" tag=21>
+        <table style="text-align: left;">
+            <tr>
+                <td rowspan="2">
+                    <img src="../images/folder.png" height="60"/>
+                </td>
+                <td style="height: 30px;">
+                    Edit Site
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 11px; font-style: italic;">
+                    Select and edit site.
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="button">
+        <table style="text-align: left;" onclick="window.parent.loadPage(parseInt(this.getAttribute('tag')))" tag=22>
+            <tr>
+                <td rowspan="2">
+                    <img src="../images/folder.png" height="60"/>
+                </td>
+                <td style="height: 30px;">
+                    View Sites
+                </td>
+            </tr>
+            <tr>
+                <td style="font-size: 11px; font-style: italic;">
+                    View sites.
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>

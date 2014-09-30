@@ -1,0 +1,382 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>eBRS Prototype</title>
+    <link href="../styles/styles.css" media="screen" rel="stylesheet" >
+    <link href="../styles/pages.css" media="screen" rel="stylesheet" >
+</head>
+<body>
+
+<fieldset>
+    <legend>Child Name</legend>
+    <table cellpadding="5" width="100%">
+        <tr>
+            <td align="right">
+                First Name
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="firstname" name="firstname" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Middle Name
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="middlename" name="middlename" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Last Name
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="lastname" name="lastname" value="" />
+            </td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset>
+    <legend>Child Details</legend>
+    <table cellpadding="5" width="100%">
+        <tr>
+            <td align="right">
+                Gender
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="gender" name="gender" >
+                    <option></option>
+                    <option>Female</option>
+                    <option>Male</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Date of Birth
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="dob" name="dob" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Place of Birth
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="place_of_birth" name="place_of_birth" value="" />
+            </td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset>
+    <legend>Child's Mother</legend>
+    <table cellpadding="5" width="100%">
+        <tr>
+            <td align="right">
+                Mother's First Name
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="firstname_mother" name="firstname_mother" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Mother's Middle Name
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="middlename_mother" name="middlename_mother" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Mother's Last Name
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="lastname_mother" name="lastname_mother" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Mother's Maiden Name
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="maidenname_mother" name="maidenname_mother" value="" />
+            </td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset>
+    <legend>Mother's Ancestry</legend>
+    <table cellpadding="5" width="100%">
+        <tr>
+            <td align="right">
+                Country of Origin
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="mcoo" name="mcoo" >
+                    <option></option>
+                    <option>Malawi</option>
+                    <option>Other</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Region of Origin
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="mroo" name="mroo" >
+                    <option></option>
+                    <option>North</option>
+                    <option>Centre</option>
+                    <option>South</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                District of Origin
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="mdoo" name="mdoo" >
+                    <option></option>
+                    <option>Mzimba</option>
+                    <option>Lilongwe</option>
+                    <option>Blantyre</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                T/A of Origin
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="mtaoo" name="mtaoo" >
+                    <option></option>
+                    <option>Mbelwa</option>
+                    <option>Kalolo</option>
+                    <option>Kapeni</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Village of Origin
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="mvoo" name="mvoo" >
+                    <option></option>
+                    <option>Mbelwa</option>
+                    <option>Kalolo</option>
+                    <option>Kapeni</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset>
+    <legend>Child's Father</legend>
+    <table cellpadding="5" width="100%">
+        <tr>
+            <td align="right">
+                Father's First Name
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="firstname_father" name="firstname_father" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Father's Middle Name
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="middlename_father" name="middlename_father" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Father's Last Name
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="lastname_father" name="lastname_father" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Father's Maiden Name
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="maidenname_father" name="maidenname_father" value="" />
+            </td>
+        </tr>
+    </table>
+</fieldset>
+
+<fieldset>
+    <legend>Father's Ancestry</legend>
+    <table cellpadding="5" width="100%">
+        <tr>
+            <td align="right">
+                Country of Origin
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="fcoo" name="fcoo" >
+                    <option></option>
+                    <option>Malawi</option>
+                    <option>Other</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Region of Origin
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="froo" name="froo" >
+                    <option></option>
+                    <option>North</option>
+                    <option>Centre</option>
+                    <option>South</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                District of Origin
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="fdoo" name="fdoo" >
+                    <option></option>
+                    <option>Mzimba</option>
+                    <option>Lilongwe</option>
+                    <option>Blantyre</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                T/A of Origin
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="ftaoo" name="ftaoo" >
+                    <option></option>
+                    <option>Mbelwa</option>
+                    <option>Kalolo</option>
+                    <option>Kapeni</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Village of Origin
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="fvoo" name="fvoo" >
+                    <option></option>
+                    <option>Mbelwa</option>
+                    <option>Kalolo</option>
+                    <option>Kapeni</option>
+                </select>
+            </td>
+        </tr>
+    </table>
+</fieldset>
+
+
+<script>
+
+    function __$(id){
+        return document.getElementById(id);
+    }
+
+    function resize(){
+
+        if(__$("dummy")){
+
+            __$("dummy").style.height = (window.innerHeight - 400) + "px";
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

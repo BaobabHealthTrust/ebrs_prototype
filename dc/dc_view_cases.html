@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>eBRS Prototype</title>
+    <link href="../styles/styles.css" media="screen" rel="stylesheet">
+    <link href="../styles/pages.css" media="screen" rel="stylesheet">
+</head>
+<body>
+
+<div id="table" class="table" style="width: 100%; border-spacing: 0px;">
+    <div class="row">
+        <div class="cell"
+             style="border-bottom: 1px solid #3465a4; border-right: 1px dotted #3465a4; padding: 5px; text-align: center;">
+            #
+        </div>
+        <div class="cell" style="border-bottom: 1px solid #3465a4; border-right: 1px dotted #3465a4; padding: 5px;">
+            Name
+        </div>
+        <div class="cell"
+             style="border-bottom: 1px solid #3465a4; border-right: 1px dotted #3465a4; padding: 5px; text-align: center;">
+            Mother's Details
+        </div>
+        <div class="cell"
+             style="border-bottom: 1px solid #3465a4; border-right: 1px dotted #3465a4; padding: 5px; text-align: center;">
+            Father's Details
+        </div>
+        <div class="cell" style="border-bottom: 1px solid #3465a4; padding: 5px; text-align: center;">
+            Status
+        </div>
+    </div>
+</div>
+
+<script>
+
+    var currentPage = 0;
+
+    function __$(id) {
+        return document.getElementById(id);
+    }
+
+    function loadRows(page, pagesize) {
+
+        if (pagesize == undefined)
+            pagesize = 20;
+
+        var header_cells = [
+            "border-bottom: 1px solid #3465a4; border-right: 1px dotted #3465a4; padding: 5px; text-align: center;",
+            "border-bottom: 1px solid #3465a4; border-right: 1px dotted #3465a4; padding: 5px;",
+            "border-bottom: 1px solid #3465a4; border-right: 1px dotted #3465a4; padding: 5px; text-align: center;",
+            "border-bottom: 1px solid #3465a4; border-right: 1px dotted #3465a4; padding: 5px; text-align: center;",
+            "border-bottom: 1px solid #3465a4; border-right: 1px dotted #3465a4; padding: 5px; text-align: center;",
+            "border-bottom: 1px solid #3465a4; padding: 5px; text-align: center;"
+        ];
+
+        var header_text = [
+            "#",
+            "Name",
+            "Mother's Details",
+            "Father's Details",
+            "Status",
+            "&nbsp;"
+        ];
+
+        var header_row = document.createElement("div");
+        header_row.className = "row";
+
+        if (__$("table")) {
+
+            __$("table").innerHTML = "";
+
+            __$("table").appendChild(header_row);
+
+        }
+        for (var c = 0; c < header_cells.length; c++) {
+
+            var cell = document.createElement("div");
+            cell.className = "cell";
+            cell.setAttribute("style", header_cells[c]);
+
+            cell.innerHTML = header_text[c];
+
+            header_row.appendChild(cell);
+
+        }
+
+        var base = 0;
+        var scrollsize = pagesize;
+
+        if(page == 0){
+
+            base = 0;
+
+            scrollsize = pagesize;
+
+        } else {
+
+            base = (page * pagesize) - page;
+
+            scrollsize = base + pagesize;
+
+        }
+
+        for (var i = base; i < scrollsize; i++) {
+            var row = document.createElement("div");
+            row.className = "row";
+
+            if (__$("table")) {
+
+                __$("table").appendChild(row);
+
+            }
+
+            var cells = [
+                "border-bottom: 1px dotted #3465a4; border-right: 1px dotted #3465a4; padding: 5px; text-align: center;",
+                "border-bottom: 1px dotted #3465a4; border-right: 1px dotted #3465a4; padding: 5px;",
+                "border-bottom: 1px dotted #3465a4; border-right: 1px dotted #3465a4; padding: 5px; text-align: center;",
+                "border-bottom: 1px dotted #3465a4; border-right: 1px dotted #3465a4; padding: 5px; text-align: center;",
+                "border-bottom: 1px dotted #3465a4; border-right: 1px dotted #3465a4; padding: 5px; text-align: center;",
+                "padding: 5px; text-align: center; width: 30px;"
+            ]
+
+            for (var c = 0; c < cells.length; c++) {
+
+                var cell = document.createElement("div");
+                cell.className = "cell";
+                cell.setAttribute("style", cells[c]);
+
+                if (c == cells.length - 1 && i == scrollsize - 1) {
+
+                    cell.setAttribute("style", cell.getAttribute("style") + " border-bottom: 1px dotted #3465a4;");
+
+                    var arrowdown = document.createElement("div");
+                    arrowdown.className = "arrow-down";
+
+                    arrowdown.onclick = function () {
+
+                        currentPage++;
+
+                        loadRows(currentPage);
+
+                    }
+
+                    cell.appendChild(arrowdown);
+
+                } else if (c == cells.length - 1 && i == base) {
+
+                    var arrowup = document.createElement("div");
+                    arrowup.className = "arrow-up";
+
+                    arrowup.onclick = function () {
+
+                        if (currentPage - 1 >= 0)
+                            currentPage--;
+
+                        loadRows(currentPage);
+
+                    }
+
+                    cell.appendChild(arrowup);
+
+                } else {
+
+                    cell.innerHTML = (c == 0 ? (i + 1) : "&nbsp;");
+
+                }
+
+                row.appendChild(cell);
+
+            }
+        }
+    }
+
+    loadRows(currentPage);
+
+</script>
+
+</body>
+</html>

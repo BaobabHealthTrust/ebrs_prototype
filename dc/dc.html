@@ -1,0 +1,278 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>eBRS Prototype</title>
+    <link href="../styles/styles.css" media="screen" rel="stylesheet" >
+    <style>
+        body {
+            margin: 10px;
+            -moz-user-select: none;
+            overflow: hidden;
+            font-family: "Nimbus Sans L", "Arial Narrow", sans-serif;
+            min-width: 684px;
+            min-height: 519px;
+        }
+    </style>
+</head>
+<body onload="resize()" onresize="resize()">
+
+<div id="main" style="border: #3465a4 solid 1px; width: 100%; height: 100%;">
+    <div style="display: table; width: 100%; height: 100%;">
+        <div style="display: table-row;">
+            <div style="display: table-cell; border-bottom: 1px solid #3465a4; height: 80px; vertical-align: middle; color: #3465a4; font-size: 36px;">
+                <table style="float: right; margin-right: 5px;" cellpadding="5">
+                    <tr>
+                        <td>
+                            NRB eBRS
+                        </td>
+                        <td>
+                            <img src="/ebrs/images/coa.png" height="50"/>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div style="display: table-row;">
+            <div style="display: table-cell;">
+
+                <iframe id="display" style="width: 100%; height: 100%; border: none;" src="dc-home.html"></iframe>
+
+            </div>
+        </div>
+        <div style="display: table-row;">
+            <div style="display: table-cell; border-top: 1px solid #3465a4; height: 70px;">
+
+                <div style="position: absolute; left: 20px; bottom: 15px; width: 570px; height: 80px; vertical-align: middle;">
+
+                    <div style="position: absolute; width: 500px; padding-left: 60px; left: 30px; bottom: 15px;
+                    border: 1px solid #3465a4; height: 50px; border-radius: 60px; background-color: #fff; z-index: 0; vertical-align: middle; ">
+
+                        <div id="section" style="font-size: 28px; color: #3465a4; position: absolute; left: 60px; bottom: 8px;">
+                            Home
+                        </div>
+
+                    </div>
+
+                    <div style="background-color: #3465a4; font-size: 36px; width: 80px; height: 80px;
+                    border-radius: 80px; vertical-align: middle; text-align: center; position: absolute; z-index: 10;">
+                        <div style="position: absolute; left: 15px; bottom: 15px;  color: #fff;">
+                            DC
+                        </div>
+                    </div>
+                </div>
+
+                <button class="green" style="position: absolute; right: 30px; bottom: 20px; cursor: pointer;
+                border: 1px solid #fff; padding: 5px; border-radius: 50px; padding-top: 7px;"
+                     onmousedown="if(currentPage == 9){window.location = '/ebrs/'} else {loadPage(9);}" >
+                    Finish
+                </button>
+
+                <button id="btnAction" class="blue" style="position: absolute; right: 160px; bottom: 20px;">Action</button>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+
+    var currentPage = 9;
+
+    function __$(id) {
+        return document.getElementById(id);
+    }
+
+    function resize() {
+        if (__$("main")) {
+            __$("main").style.height = (window.innerHeight - 20) + 'px';
+        }
+
+        if (__$("display")) {
+            __$("display").style.height = (window.innerHeight - 150) + 'px';
+        }
+    }
+
+    var page_lookup = {
+        0: {
+            "page" : "dc_add_child.html",
+            "title" : "New Child Record",
+            "button" : {
+                "text" : "Save",
+                "class" : "blue",
+                "action" : "loadPage(9)"
+            }
+        },
+        1: {
+            "page" : "dc_view_cases.html",
+            "title" : "View Local Records"
+        },
+        2: {
+            "page" : "dc_change_request.html",
+            "title" : "Case Re-Open Request",
+            "button" : {
+                "text" : "Request Change",
+                "class" : "blue",
+                "action" : "loadPage(9)"
+            }
+        },
+        3: {
+            "page" : "dc_edit_case.html",
+            "title" : "Edit Case",
+            "button" : {
+                "text" : "Save Changes",
+                "class" : "blue",
+                "action" : "loadPage(9)"
+            }
+        },
+        4: {
+            "page" : "dc_view_requests.html",
+            "title" : "View Requests"
+        },
+        5: {
+            "page" : "dc_reports.html",
+            "title" : "Reports"
+        },
+        6: {
+            "page" : "dc_manage_duplicates.html",
+            "title" : "Manage Duplicates",
+            "button" : {
+                "text" : "Merge",
+                "class" : "blue",
+                "action" : "loadPage(9)"
+            }
+        },
+        7: {
+            "page" : "dc_manage_users.html",
+            "title" : "Manage Users"
+        },
+        8: {
+            "page" : "dc_my_account.html",
+            "title" : "My Account",
+            "button" : {
+                "text" : "Change Password",
+                "class" : "blue",
+                "action" : "loadPage(10)"
+            }
+        },
+        9: {
+            "page" : "dc-home.html",
+            "title" : "Home"
+        },
+        10 : {
+            "page" : "dc_change_password.html",
+            "title" : "Change Password",
+            "button" : {
+                "text" : "Save",
+                "class" : "blue",
+                "action" : "loadPage(8)"
+            }
+        },
+        11 : {
+            "page" : "dc_create_user.html",
+            "title" : "Create User",
+            "button" : {
+                "text" : "Save User",
+                "class" : "blue",
+                "action" : "loadPage(9)"
+            }
+        },
+        12 : {
+            "page" : "dc_update_user.html",
+            "title" : "Update User",
+            "button" : {
+                "text" : "Save Changes",
+                "class" : "blue",
+                "action" : "loadPage(9)"
+            }
+        },
+        13 : {
+            "page" : "dc_unblock_user.html",
+            "title" : "Unblock User",
+            "button" : {
+                "text" : "Unblock User",
+                "class" : "blue",
+                "action" : "loadPage(9)"
+            }
+        },
+        14 : {
+            "page" : "dc_block_user.html",
+            "title" : "Block User",
+            "button" : {
+                "text" : "Block User",
+                "class" : "blue",
+                "action" : "loadPage(9)"
+            }
+        },
+        15: {
+            "page" : "dc_view_users.html",
+            "title" : "View Users"
+        }
+    };
+
+    function loadPage(id){
+        if(page_lookup[id] != undefined){
+
+            currentPage = id;
+
+            if(__$("section")){
+
+                __$("section").innerHTML = page_lookup[id]["title"];
+
+            }
+
+            if(__$("display")){
+
+                __$("display").setAttribute("src", page_lookup[id]["page"]);
+
+            }
+
+            if(__$("btnAction")){
+
+                if(page_lookup[id]["button"] != undefined){
+
+                    if(page_lookup[id]["button"]["class"] != undefined){
+
+                        __$("btnAction").className = page_lookup[id]["button"]["class"];
+
+                    } else {
+
+                        __$("btnAction").className = "blue";
+
+                    }
+
+                    if(page_lookup[id]["button"]["text"] != undefined && page_lookup[id]["button"]["action"] != undefined) {
+
+                        __$("btnAction").innerHTML = page_lookup[id]["button"]["text"];
+
+                        __$("btnAction").setAttribute("action", page_lookup[id]["button"]["action"]);
+
+                        __$("btnAction").onclick = function(){
+
+                            eval(this.getAttribute("action"));
+
+                        }
+
+                        __$("btnAction").style.display = "block";
+
+                    } else {
+
+                        __$("btnAction").style.display = "none";
+
+                    }
+
+                } else {
+
+                    __$("btnAction").style.display = "none";
+
+                }
+
+            }
+
+        }
+    }
+
+    loadPage(currentPage);
+
+</script>
+
+</body>
+</html>

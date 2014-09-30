@@ -1,0 +1,167 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>eBRS Prototype</title>
+    <link href="../styles/styles.css" media="screen" rel="stylesheet" >
+    <link href="../styles/pages.css" media="screen" rel="stylesheet" >
+</head>
+<body onload="resize()" onresize="resize()">
+
+<table cellpadding="5" width="100%">
+    <tr>
+        <td align="right">
+            Select Person
+        </td>
+        <td>
+            :
+        </td>
+        <td>
+            <input type="text" class="input_cell" id="person" name="person" value="" style="width: 97%;" />
+        </td>
+    </tr>
+    <tr>
+        <td align="right">
+            Name
+        </td>
+        <td>
+            :
+        </td>
+        <td>
+            <input type="text" class="input_cell" id="personname" name="personname" value=""  style="width: 97%;" />
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+
+            <fieldset>
+                <legend>Mother's Details</legend>
+                <table cellpadding="5" width="100%">
+                    <tr>
+                        <td align="right">
+                            Name
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            <input type="text" class="input_cell" id="mname" name="mname" value=""  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            Home Village
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            <input type="text" class="input_cell" id="mhvillage" name="mhvillage" value=""  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            Home T/A
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            <input type="text" class="input_cell" id="mhta" name="mhta" value=""  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            Home District
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            <input type="text" class="input_cell" id="mhdistrict" name="mhdistrict" value=""  />
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+        </td>
+        <td>
+
+            <fieldset>
+                <legend>Father's Details</legend>
+                <table cellpadding="5" width="100%">
+                    <tr>
+                        <td align="right">
+                            Name
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            <input type="text" class="input_cell" id="fname" name="fname" value=""  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            Home Village
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            <input type="text" class="input_cell" id="fhvillage" name="fhvillage" value=""  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            Home T/A
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            <input type="text" class="input_cell" id="fhta" name="fhta" value=""  />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            Home District
+                        </td>
+                        <td>
+                            :
+                        </td>
+                        <td>
+                            <input type="text" class="input_cell" id="fhdistrict" name="fhdistrict" value=""  />
+                        </td>
+                    </tr>
+                </table>
+            </fieldset>
+
+        </td>
+    </tr>
+    <tr>
+        <td colspan="3">
+            <div id="dummy" style="width: 99.8%; background-color: rgba(83, 121, 232, 0.1); border: 1px solid #eee; border-radius: 5px;">&nbsp;</div>
+        </td>
+    </tr>
+</table>
+
+<script>
+
+    function __$(id){
+        return document.getElementById(id);
+    }
+
+    function resize(){
+
+        if(__$("dummy")){
+
+            __$("dummy").style.height = (window.innerHeight - 500) + "px";
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

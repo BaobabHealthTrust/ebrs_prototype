@@ -1,0 +1,119 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>eBRS Prototype</title>
+    <link href="../styles/styles.css" media="screen" rel="stylesheet" >
+    <link href="../styles/pages.css" media="screen" rel="stylesheet" >
+</head>
+<body onload="resize()" onresize="resize()">
+
+    <table cellpadding="5" width="100%">
+        <tr>
+            <td align="right">
+                Select Site Code
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="sitecode" name="sitecode" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Site Name
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="site" name="site" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Latitude
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="lat" name="lat" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Longitude
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <input type="text" class="input_cell" id="lon" name="lon" value="" />
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                Region
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="region" name="region" >
+                    <option></option>
+                    <option>North</option>
+                    <option>Centre</option>
+                    <option>South</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                District
+            </td>
+            <td>
+                :
+            </td>
+            <td>
+                <select type="text" class="input_cell" id="mdoo" name="mdoo" >
+                    <option></option>
+                    <option>Mzimba</option>
+                    <option>Lilongwe</option>
+                    <option>Blantyre</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td align="right">
+                &nbsp;
+            </td>
+            <td>
+                &nbsp;
+            </td>
+            <td>
+                <div id="dummy" style="width: 82.5%; background-color: rgba(83, 121, 232, 0.1); border: 1px solid #eee; border-radius: 5px;">&nbsp;</div>
+            </td>
+        </tr>
+    </table>
+
+<script>
+
+    function __$(id){
+        return document.getElementById(id);
+    }
+
+    function resize(){
+
+        if(__$("dummy")){
+
+            __$("dummy").style.height = (window.innerHeight - 400) + "px";
+
+        }
+
+    }
+
+</script>
+
+</body>
+</html>
